@@ -1,4 +1,4 @@
-package fr.epsi.TopIdea;
+package fr.epsi.TopIdea.controller;
 
 import java.io.*;
 import javax.servlet.http.*;
