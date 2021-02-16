@@ -41,11 +41,11 @@ public class Vote {
         this.idea = idea;
     }
 
-    public possibleVotes getVote() {
+    public voteValue getVote() {
         return vote;
     }
 
-    public void setVote(possibleVotes vote) {
+    public void setVote(voteValue vote) {
         this.vote = vote;
     }
 }
