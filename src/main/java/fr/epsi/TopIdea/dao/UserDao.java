@@ -17,7 +17,7 @@ public class UserDao implements IUserDao {
 
     @Override
     public List<User> findBrains() {
-        List<User> brains = this.entityManager.createQuery("select u from User u order by u.ideas.size desc limit 3").getResultList();
+        List<User> brains = this.entityManager.createQuery("select u from User u order by u.ideas.size desc").getResultList();
         return brains;
     }
 }
