@@ -1,0 +1,10 @@
+package fr.epsi.TopIdea.dao;
+
+import fr.epsi.TopIdea.entity.Idea;
+
+import java.util.List;
+
+public interface IIdeaDao {
+    List<Idea> findTops();
+    List<Idea> findBuzz();
+}
