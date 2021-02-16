@@ -1,9 +1,7 @@
 package fr.epsi.TopIdea.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class User {
@@ -15,6 +13,18 @@ public class User {
     private String username;
     private String mail;
     private String password;
+
+    @ManyToOne
+    private Role role;
+
+    @OneToMany(mappedBy = "user")
+    private Collection<Vote> votes;
+
+    @OneToMany(mappedBy = "author")
+    private Collection<Idea> ideas;
+
+    @OneToMany(mappedBy = "author")
+    private Collection<Comment> comments;
 
     // business methods
     public void submit() {
@@ -56,5 +66,37 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Collection<Vote> getVotes() {
+        return votes;
+    }
+
+    public void setVotes(Collection<Vote> votes) {
+        this.votes = votes;
+    }
+
+    public Collection<Idea> getIdeas() {
+        return ideas;
+    }
+
+    public void setIdeas(Collection<Idea> ideas) {
+        this.ideas = ideas;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public Collection<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Collection<Comment> comments) {
+        this.comments = comments;
     }
 }

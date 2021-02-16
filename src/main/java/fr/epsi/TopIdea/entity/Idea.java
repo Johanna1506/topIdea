@@ -3,6 +3,7 @@ package fr.epsi.TopIdea.entity;
 
 import javax.persistence.*;
 import java.lang.reflect.Array;
+import java.util.Collection;
 
 @Entity
 public class Idea {
@@ -12,14 +13,25 @@ public class Idea {
 
     private String date;
 
+    @ManyToOne
+    private User author;
+
     private String title;
 
-    private String tag;
+    @ManyToOne
+    private Category category;
 
     private String description;
 
     private String image;
 
+    @OneToMany(mappedBy = "idea")
+    private Collection<Vote> votes;
+
+    @OneToMany(mappedBy = "idea")
+    private Collection<Comment> comments;
+
+    // getters & setters
     public Long getId() {
         return id;
     }
@@ -68,4 +80,27 @@ public class Idea {
         this.image = image;
     }
 
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public Collection<Vote> getVotes() {
+        return votes;
+    }
+
+    public void setVotes(Collection<Vote> votes) {
+        this.votes = votes;
+    }
+
+    public Collection<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Collection<Comment> comments) {
+        this.comments = comments;
+    }
 }

@@ -1,9 +1,7 @@
 package fr.epsi.TopIdea.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Category {
@@ -14,6 +12,10 @@ public class Category {
 
     private String name;
 
+    @OneToMany(mappedBy = "category")
+    private Collection<Idea> ideas;
+
+    // getters & setters
     public Long getId() {
         return id;
     }
@@ -28,5 +30,13 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Collection<Idea> getIdeas() {
+        return ideas;
+    }
+
+    public void setIdeas(Collection<Idea> ideas) {
+        this.ideas = ideas;
     }
 }

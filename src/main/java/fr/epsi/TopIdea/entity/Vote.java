@@ -1,9 +1,6 @@
 package fr.epsi.TopIdea.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Vote {
@@ -12,8 +9,12 @@ public class Vote {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
     private User user;
+
+    @ManyToOne
     private Idea idea;
+
     private voteValue vote;
 
     // getters & setters
