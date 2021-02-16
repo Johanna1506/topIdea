@@ -22,7 +22,7 @@
 
 <h2>Brains</h2>
 <p>Les 3 utilisateurs ayant postés le plus d'idées</p>
-<c:forEach items="${tops}" var="tops" varStatus="variableStatus">
+<c:forEach items="${brains}" var="tops" varStatus="variableStatus">
     <tr>
             <%--    <td>${article.code}</td>
                 <td>${article.nom}</td>
