@@ -32,7 +32,6 @@ public class HomeServlet extends HttpServlet {
         List<Idea> buzz = this.ideaService.getBuzz();
         request.setAttribute("buzz", buzz);
 
-        this.getServletContext().getRequestDispatcher("pages/home.jsp").forward(request, response);
-
+        this.getServletContext().getRequestDispatcher("/pages/home.jsp").forward(request, response);
     }
 }
