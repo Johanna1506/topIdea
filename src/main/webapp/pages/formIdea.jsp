@@ -11,25 +11,34 @@
 <html>
 <head>
     <title>Soumettre une idée</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
 </head>
 <body>
-    <h1>Soumettre une nouvelle idée</h1>
-    <form method="post" action="newidea">
-        <label for="title">Titre de l'idée :</label>
-        <input type="text" name="title"/>
+    <div class="form-box">
+        <h1>Soumettre une nouvelle idée</h1>
+        <form method="post" action="newidea">
+            <div>
+                <input type="text" name="title" required/>
+                <label for="title">Titre</label>
+            </div>
 
-        <label for="description">Description de votre idée</label>
-        <input type="text" name="description"/>
+            <div>
+                <input type="text" name="description" required/>
+                <label for="description">Description</label>
+            </div>
 
-        <label for="category">Selectionner une categorie</label>
-        <select name="category">
-            <c:forEach items="${categories}" var="category" varStatus="variableStatus">
-                <option value=${category.name}>${category.name}</option>
-            </c:forEach>
-        </select>
+            <div>
+                <select name="category">
+                    <c:forEach items="${categories}" var="category" varStatus="variableStatus">
+                        <option value=${category.name}>${category.name}</option>
+                    </c:forEach>
+                </select>
+                <label for="category">Selectionner une categorie</label>
+            </div>
+            <input type="submit" value="Soumettre" />
+        </form>
 
-        <input type="submit" value="Soumettre" />
+    </div>
 
-    </form>
 </body>
 </html>

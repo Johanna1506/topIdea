@@ -1,17 +1,245 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap');
 
-body {
-    font-family: 'Open Sans', sans-serif;
+
+/* FORM */
+a {
+    position: fixed;
+    z-index: 999;
+    bottom: 15px;
+    left: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .5s;
+    letter-spacing: 3px;
+    background-color: #31326f;
+    border: 1px solid #31326f;
+    border-radius: 6px;
+}
+a:hover {
+    color: #31326f;
+    background-color: #eee;
+}
+.form-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: #31326f;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+.form-box h1 {
+    margin: 0 0 30px;
     padding: 0;
+    color: #fff;
+    text-align: center;
+}
+.form-box div {
+    position: relative;
+}
+.form-box div input,
+.form-box div select{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+.form-box div label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+.form-box div select:focus ~ label,
+.form-box div input:focus ~ label,
+.form-box div select:valid ~ label{
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+.form-box input[type='submit'] {
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.form-box input[type='submit']:hover {
+    color: #31326f;
+    background-color: #dbf6e9;
+    border-radius: 6px;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+body {
+    background: #eee;
+    color: #191919;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+h1, h2 {
+    font-family: 'Fjalla One', sans-serif;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+figure {
     margin: 0;
 }
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: #94ebcd;
+img {
+    height: auto;
+    width: 100%;
 }
-svg {
-    width: 20px;
-    margin-right: auto;
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 2fr;
+    grid-auto-rows: minmax(100px, auto);
+    margin: 24px;
+    max-width: 1000px;
+    position: relative;
+}
+.sample-section-wrap {
+    width: 100%;
+    margin: 0;
+    top: 490px;
+    z-index: 2;
+    position: relative;
+    background-color: #eee;
+}
+.wrapper > * {
+    grid-column: 1 / span 2;
+}
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    margin: 0;
+    background-color: #31326f;
+    font-size: 72px;
+    color: #eeeeee;
+}
+.header {
+    font-size: 1.5em;
+    grid-row: 1 / 2;
+}
+.header:after {
+    background: #6817ba;
+    content: "";
+    display: block;
+    height: 20px;
+    width: auto;
+}
+hr {
+    background: #6817ba;
+    display: block;
+    height: 20px;
+    width: 45px;
+    margin: 70px auto;
+}
+.article {
+    text-align: right;
+}
+.featured-image-1 {
+    grid-row: 2 / 3;
+}
+.number-1 {
+    grid-row: 2 / 4;
+}
+.featured-image-2, .number-2 {
+    grid-row: 4 / 5;
+}
+.number-1 {
+    align-self: end;
+    color: rgba(104,23,186,0.5);
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 480px;
+    line-height: 480px;
+    grid-column: 1 / 2;
+}
+.article-1{
+    grid-column: 2 / 3;
+}
+.featured-image-2, .number-2 {
+    align-self: end;
+}
+.number-2 {
+    color: #eee;
+    font-size: 200px;
+    justify-self: end;
+    line-height: 160px;
+}
+.number-3 {
+    background: black;
+    border-radius: 130px;
+    color: white;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 100px;
+    height: 130px;
+    line-height: 130px;
+    position: absolute;
+    grid-row: 6 / 7;
+    right: -20px;
+    text-align: center;
+    top: -20px;
+    width: 130px;
+}
+.featured-image-3 img {
+    height: 100%;
+}
+@media (min-width: 600px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr 2fr);
+        margin: 24px auto;
+    }
+    .header {
+        grid-column: 3 / 5;
+        width: 70%;
+    }
+    .featured-image-1 {
+        grid-row: 1 / 3;
+    }
+    .article-1 {
+        grid-row: 3 / 4;
+    }
+    .article-2 {
+        grid-column: 4 / 5;
+        grid-row: 4 / 5;
+    }
+    .featured-image-2, .number-2 {
+        grid-column: 3 / 5;
+        grid-row: 2 / 4;
+    }
+    .featured-image-3, .number-3 {
+        grid-row: 4 / 6;
+    }
+    .article-3{
+        grid-row: 6 / 7;
+    }
 }
