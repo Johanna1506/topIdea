@@ -16,7 +16,7 @@ public class IdeaDao implements IIdeaDao {
 
     @Override
     public List<Idea> findTops() {
-        List<Idea> tops = this.entityManager.createQuery("select i from Idea i").getResultList(); // TODO ecrire la bonne requete :)
+        List<Idea> tops = this.entityManager.createQuery("select i, i.votes.size as totalVotes, v.vote from Idea i join i.votes v where v.vote = 'TOP' order by totalVotes desc").getResultList(); // TODO ecrire la bonne requete :)
         return tops;
     }
 

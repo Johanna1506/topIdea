@@ -12,16 +12,27 @@
 
 <h2>Tops</h2>
 <p>Les 3 idées les mieux notées par la communauté Top Idea</p>
-
+<ul>
+    <c:forEach items="${tops}" var="idea" varStatus="variableStatus">
+        <li>${idea.title}</li>
+    </c:forEach>
+</ul>
 
 <h2>Brains</h2>
-<p>Les 3 utilisateurs ayant postés le plus d'idées</p>
-
-
-
+<p>Les 3 utilisateurs ayant posté le plus d'idées</p>
+<ul>
+    <c:forEach items="${brains}" var="user" varStatus="variableStatus">
+        <li>${user.username}</li>
+    </c:forEach>
+</ul>
 
 <h2>Buzz</h2>
 <p>Les 3 idées ayant obtenu le plus de vote</p>
+<ul>
+    <c:forEach items="${buzz}" var="idea" varStatus="variableStatus">
+        <li>${idea.title}</li>
+    </c:forEach>
+</ul>
 
 
 <a href="">Soumettre Idée</a>
