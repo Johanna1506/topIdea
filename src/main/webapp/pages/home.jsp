@@ -22,7 +22,7 @@
 
 <h2>Brains</h2>
 <p>Les 3 utilisateurs ayant postés le plus d'idées</p>
-<c:forEach items="${brains}" var="tops" varStatus="variableStatus">
+<c:forEach items="${brains}" var="brain" varStatus="variableStatus">
     <tr>
             <%--    <td>${article.code}</td>
                 <td>${article.nom}</td>
@@ -32,6 +32,13 @@
 
 <h2>Buzz</h2>
 <p>Les 3 idées ayant obtenu le plus de vote</p>
+<c:forEach items="${buzz}" var="buzz" varStatus="variableStatus">
+    <tr>
+            <%--    <td>${article.code}</td>
+                <td>${article.nom}</td>
+                <td>${article.prix}</td>--%>
+    </tr>
+</c:forEach>
 
 <a href="formIdea.jsp">Soumettre Idée</a>
 </body>
