@@ -5,6 +5,4 @@
   Time: 17:50
   To change this template use File | Settings | File Templates.
 --%>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="../style.css">
-<title>Top Ideas</title>
+
