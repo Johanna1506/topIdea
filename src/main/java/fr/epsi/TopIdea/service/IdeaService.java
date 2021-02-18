@@ -5,8 +5,10 @@ import fr.epsi.TopIdea.dao.IdeaDao;
 import fr.epsi.TopIdea.entity.Idea;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import java.util.List;
 
+@Stateless
 public class IdeaService implements IIdeaService {
 
     @EJB

@@ -5,8 +5,10 @@ import fr.epsi.TopIdea.dao.UserDao;
 import fr.epsi.TopIdea.entity.User;
 
 import javax.ejb.EJB;
+import javax.ejb.Stateless;
 import java.util.List;
 
+@Stateless
 public class UserService implements IUserService {
     @EJB
     IUserDao userDao = new UserDao();
