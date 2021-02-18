@@ -12,7 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
-@WebServlet(name = "homeServlet", value = "/")
+@WebServlet(name = "homeServlet", value = "/home")
 public class HomeServlet extends HttpServlet {
 
     @EJB
