@@ -93,6 +93,8 @@ a:hover {
     background-color: #dbf6e9;
     border-radius: 6px;
 }
+
+/* BODY */
 *, *:before, *:after {
     box-sizing: border-box;
 }
@@ -160,7 +162,7 @@ hr {
     background: #6817ba;
     display: block;
     height: 20px;
-    width: 45px;
+    width: 45%;
     margin: 70px auto;
 }
 .article {
@@ -196,7 +198,7 @@ hr {
     line-height: 160px;
 }
 .number-3 {
-    background: black;
+    background: #31326f;
     border-radius: 130px;
     color: white;
     font-family: 'Fjalla One', sans-serif;
@@ -241,5 +243,80 @@ hr {
     }
     .article-3{
         grid-row: 6 / 7;
+    }
+}
+
+/* CARD */
+.brains h2,
+.brains p {
+    text-align: center;
+}
+
+.cards-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 40px;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.card .card_image {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+}
+
+.card .card_image img {
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+    object-fit: cover;
+}
+
+.card .card_title {
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: -365px;
+    height: 40px;
+}
+.card .card_title h3 {
+    font-size: 96px;
+}
+
+.card:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25),
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white {
+    color: white;
+}
+
+.title-black {
+    color: black;
+}
+.title-black p::first-letter,
+.title-white p::first-letter {
+    text-transform: capitalize;
+}
+
+@media all and (max-width: 500px) {
+    .card-list {
+        /* On small screens, we are no longer using row direction but column */
+        flex-direction: column;
     }
 }
