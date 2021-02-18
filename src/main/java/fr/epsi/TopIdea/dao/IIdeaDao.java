@@ -7,4 +7,5 @@ import java.util.List;
 public interface IIdeaDao {
     List<Idea> findTops();
     List<Idea> findBuzz();
+    void create(Idea idea);
 }

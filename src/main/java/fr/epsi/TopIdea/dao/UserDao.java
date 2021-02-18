@@ -20,4 +20,10 @@ public class UserDao implements IUserDao {
         List<User> brains = this.entityManager.createQuery("select u from User u order by u.ideas.size desc").getResultList();
         return brains;
     }
+
+    @Override
+    public User findOneByName(String name) {
+        User user = (User) this.entityManager.createQuery("select u from User u where u.username = :username").setParameter("username", name).getSingleResult();
+        return user;
+    }
 }

@@ -14,6 +14,11 @@ public class UserService implements IUserService {
     IUserDao userDao = new UserDao();
 
     @Override
+    public User findByName(String name) {
+        return this.userDao.findOneByName(name);
+    }
+
+    @Override
     public List<User> getBrains() {
         return this.userDao.findBrains();
     }
