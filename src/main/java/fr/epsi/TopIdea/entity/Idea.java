@@ -95,4 +95,12 @@ public class Idea {
     public void setComments(Collection<Comment> comments) {
         this.comments = comments;
     }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }
