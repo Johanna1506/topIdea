@@ -19,7 +19,7 @@
             <div class="header">
                 <h1>Tops, les 3 idées les mieux notées</h1>
             </div>
-            <c:forEach items="${buzz}" var="idea" varStatus="variableStatus">
+            <c:forEach items="${buzz}" var="idea" varStatus="variableStatus" end="2">
                 <figure class="featured-image-${idea.id}">
                     <img src="${idea.image}" alt="photo top">
                 </figure>
@@ -53,7 +53,7 @@
             <div class="header">
                 <h1>Tops, les 3 idées les plus votées</h1>
             </div>
-            <c:forEach items="${buzz}" var="idea" varStatus="variableStatus">
+            <c:forEach items="${buzz}" var="idea" varStatus="variableStatus" end="2">
                 <figure class="featured-image-${idea.id}">
                     <img src="${idea.image}" alt="photo top">
                 </figure>

@@ -68,8 +68,9 @@ a:hover {
 }
 .form-box div select:focus ~ label,
 .form-box div input:focus ~ label,
+.form-box div input:valid~ label,
 .form-box div select:valid ~ label{
-    top: -20px;
+    top: -24px;
     left: 0;
     color: #03e9f4;
     font-size: 12px;
@@ -92,6 +93,10 @@ a:hover {
     color: #31326f;
     background-color: #dbf6e9;
     border-radius: 6px;
+}
+
+.form-box a {
+    position: initial;
 }
 
 /* BODY */
@@ -144,11 +149,12 @@ header {
     z-index: 1;
     margin: 0;
     background-color: #31326f;
-    font-size: 72px;
+    font-size: 50px;
+    padding: 28px;
     color: #eeeeee;
 }
 .header {
-    font-size: 1.5em;
+    font-size: 1em;
     grid-row: 1 / 2;
 }
 .header:after {
