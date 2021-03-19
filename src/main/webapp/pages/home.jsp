@@ -13,7 +13,7 @@
         <h1>Top Idea, top ou flop ?</h1>
 
     </header>
-    <a href="newidea">Soumettre Idée</a>
+    <a href="auth/newidea">Soumettre Idée</a>
     <div class="sample-section-wrap">
         <div class="wrapper">
             <div class="header">

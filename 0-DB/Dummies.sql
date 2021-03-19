@@ -1,11 +1,11 @@
 INSERT INTO Role VALUES
-	(1, 'Chef.fe de la Terre'),
-	(2, 'Grosse Pompe');
+	(1, 'ADMIN'),
+	(2, 'USER');
 
 INSERT INTO User (id, mail, password, username, role_id) VALUES
-	(1, 'johanna.jato@epsi.fr', 'johanna', 'johanna', 2),
-	(2, 'camille,jouan@epsi.fr', 'camille', 'camille', 1),
-	(3, 'donovan.damhec@epsi.fr', 'donovan', 'donovan', 1),
+	(1, 'johanna.jato@epsi.fr', 'johanna', 'johanna', 1),
+	(2, 'camille.jouan@epsi.fr', 'camille', 'camille', 1),
+	(3, 'donovan.damhec@epsi.fr', 'donovan', 'donovan', 2),
 	(4, 'claire.lapompe@epsi.fr', 'claire', 'claire', 2),
 	(5, 'toto@epsi.fr', 'toto', 'toto', 2);
 

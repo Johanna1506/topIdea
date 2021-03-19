@@ -6,14 +6,24 @@
 
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>secure</web-resource-name>
-            <url-pattern>/admin</url-pattern>
+            <web-resource-name>admin</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>ADMIN</role-name>
-<!--                <role-name>USER</role-name>-->
         </auth-constraint>
     </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>user</web-resource-name>
+            <url-pattern>/auth/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>USER</role-name>
+        </auth-constraint>
+    </security-constraint>
+
     <login-config>
         <auth-method>FORM</auth-method>
         <realm-name>secureRealm</realm-name>
@@ -22,8 +32,11 @@
             <form-error-page>/pages/loginError.jsp</form-error-page>
         </form-login-config>
     </login-config>
+
     <security-role>
         <role-name>ADMIN</role-name>
-<!--        <role-name>USER</role-name>-->
+    </security-role>
+    <security-role>
+        <role-name>USER</role-name>
     </security-role>
 </web-app>
