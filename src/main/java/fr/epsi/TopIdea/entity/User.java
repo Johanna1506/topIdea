@@ -11,29 +11,22 @@ public class User {
     private Long id;
 
     private String username;
-    private String mail;
     private String password;
+    private boolean isActive;
 
-    @ManyToOne
-    private Role role;
+    @ManyToMany(mappedBy = "users")
+    private Collection<Role> roles;
+
+    @OneToMany(mappedBy = "author")
+    private Collection<Idea> ideas;
 
     @OneToMany(mappedBy = "user")
     private Collection<Vote> votes;
 
     @OneToMany(mappedBy = "author")
-    private Collection<Idea> ideas;
-
-    @OneToMany(mappedBy = "author")
     private Collection<Comment> comments;
 
     // business methods
-    public void submit() {
-        // submit a new idea -> IdeaDTO
-    }
-
-    public void vote() {
-        // vote (like or dislike) for an Idea
-    }
 
     // getters & setters
     public Long getId() {
@@ -52,14 +45,6 @@ public class User {
         this.username = username;
     }
 
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -68,12 +53,20 @@ public class User {
         this.password = password;
     }
 
-    public Collection<Vote> getVotes() {
-        return votes;
+    public boolean isActive() {
+        return isActive;
     }
 
-    public void setVotes(Collection<Vote> votes) {
-        this.votes = votes;
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
+    public Collection<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
     }
 
     public Collection<Idea> getIdeas() {
@@ -84,12 +77,12 @@ public class User {
         this.ideas = ideas;
     }
 
-    public Role getRole() {
-        return role;
+    public Collection<Vote> getVotes() {
+        return votes;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setVotes(Collection<Vote> votes) {
+        this.votes = votes;
     }
 
     public Collection<Comment> getComments() {

@@ -26,6 +26,14 @@ public class Comment {
         this.id = id;
     }
 
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
     public Idea getIdea() {
         return idea;
     }
@@ -40,13 +48,5 @@ public class Comment {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public User getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(User author) {
-        this.author = author;
     }
 }
