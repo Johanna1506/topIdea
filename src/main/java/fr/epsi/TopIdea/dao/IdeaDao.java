@@ -27,7 +27,9 @@ public class IdeaDao implements IIdeaDao {
 
     @Override
     public List<Idea> findBuzz() {
-        List<Idea> buzz = this.entityManager.createQuery("select i from Idea i order by i.votes.size desc").getResultList();
+        List<Idea> buzz = this.entityManager.createQuery("select i from Idea i order by i.votes.size desc")
+                .setMaxResults(3)
+                .getResultList();
         return buzz;
     }
 
