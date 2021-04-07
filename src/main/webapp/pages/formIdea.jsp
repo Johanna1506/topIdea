@@ -28,6 +28,11 @@
             </div>
 
             <div>
+                <input type="text" name="image" />
+                <label for="image">Lien vers l'image</label>
+            </div>
+
+            <div>
                 <select name="category">
                     <c:forEach items="${categories}" var="category" varStatus="variableStatus">
                         <option value=${category.name}>${category.name}</option>

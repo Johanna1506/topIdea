@@ -25,6 +25,7 @@ public class HomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Idea> tops = this.ideaService.getTops();
         request.setAttribute("tops", tops);
+        System.out.println(tops);
 
         List<User> brains = this.userService.getBrains();
         request.setAttribute("brains", brains);
@@ -32,8 +33,8 @@ public class HomeServlet extends HttpServlet {
         List<Idea> buzz = this.ideaService.getBuzz();
         request.setAttribute("buzz", buzz);
 
-        System.out.println(request.getUserPrincipal());
-        System.out.println(request.isUserInRole("ADMIN"));
+//        System.out.println(request.getUserPrincipal());
+//        System.out.println(request.isUserInRole("ADMIN"));
 
         this.getServletContext().getRequestDispatcher("/pages/home.jsp").forward(request, response);
     }
