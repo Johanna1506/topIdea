@@ -43,7 +43,7 @@ public class VoteServlet extends HttpServlet {
         try {
             voteValue vote = voteValue.valueOf(voteName);
             voteService.addVote(user, idea, vote);
-        } catch(IllegalArgumentException e) {
+        } catch(Exception e) {
             this.getServletContext().getRequestDispatcher("/pages/nope.jsp").forward(request, response);
         }
 
