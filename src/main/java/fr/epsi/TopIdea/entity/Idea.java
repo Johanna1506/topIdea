@@ -3,6 +3,7 @@ package fr.epsi.TopIdea.entity;
 
 import javax.persistence.*;
 import java.lang.reflect.Array;
+import java.time.LocalDate;
 import java.util.Collection;
 
 @Entity
@@ -11,7 +12,7 @@ public class Idea {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String date;
+    private LocalDate date;
     private String title;
     private String description;
     private String image;
@@ -37,11 +38,11 @@ public class Idea {
         this.id = id;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
