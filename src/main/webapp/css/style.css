@@ -5,19 +5,24 @@
 a {
     position: fixed;
     z-index: 999;
-    bottom: 15px;
+    bottom: 20px;
     left: 10px;
     display: inline-block;
     padding: 10px 20px;
     color: #03e9f4;
-    font-size: 12px;
+    font-size: 11px;
     text-decoration: none;
     text-transform: uppercase;
+    text-align: center;
     transition: .5s;
     letter-spacing: 3px;
     background-color: #31326f;
     border: 1px solid #31326f;
     border-radius: 6px;
+    width: 205px;
+}
+a:nth-of-type(2) {
+    bottom: 70px;
 }
 a:hover {
     color: #31326f;
@@ -174,6 +179,28 @@ hr {
 .article {
     text-align: right;
 }
+article button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+article button svg {
+    width: 30px;
+    margin-right: 12px;
+    fill: #6817ba;
+}
+article button:nth-of-type(2) {
+    transform: rotate(180deg);
+
+}
+article button:nth-of-type(2) svg {
+    fill: #a33c84;
+}
+
 .featured-image-1 {
     grid-row: 2 / 3;
 }
