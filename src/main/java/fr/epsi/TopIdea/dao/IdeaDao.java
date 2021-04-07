@@ -49,4 +49,10 @@ public class IdeaDao implements IIdeaDao {
         List<Idea> ideas = this.entityManager.createQuery("select i from Idea i order by i.date desc").getResultList();
         return ideas;
     }
+
+    @Override
+    public Idea findOne(Long id) {
+        Idea idea = (Idea) this.entityManager.createQuery("select i from Idea i where i.id = :id").setParameter("id", id).getSingleResult();
+        return idea;
+    }
 }

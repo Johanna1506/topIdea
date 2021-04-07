@@ -8,5 +8,6 @@ public interface IIdeaDao {
     List<Idea> findAll();
     List<Idea> findTops();
     List<Idea> findBuzz();
+    Idea findOne(Long id);
     void create(Idea idea);
 }
