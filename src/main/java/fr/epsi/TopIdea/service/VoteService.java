@@ -26,7 +26,9 @@ public class VoteService implements IVoteService {
             throw new IllegalArgumentException("Vous ne pouvez pas voter pour une idee postee il y a plus de 7 jours.");
         }
 
-
+        if (voteDao.exists(user, idea)) {
+            throw new IllegalArgumentException("Vous ne pouvez pas voter plusieurs fois pour la meme idee.");
+        }
 
         Vote vote = new Vote();
         vote.setUser(user);

@@ -1,5 +1,7 @@
 package fr.epsi.TopIdea.dao;
 
+import fr.epsi.TopIdea.entity.Idea;
+import fr.epsi.TopIdea.entity.User;
 import fr.epsi.TopIdea.entity.Vote;
 
 import javax.annotation.Resource;
@@ -28,5 +30,13 @@ public class VoteDao implements IVoteDao {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public boolean exists(User user, Idea idea) {
+        return (this.entityManager.createQuery("select v from Vote v where v.user = :user and v.idea = :idea")
+                .setParameter("user", user)
+                .setParameter("idea", idea)
+                .getSingleResult() != null);
     }
 }
