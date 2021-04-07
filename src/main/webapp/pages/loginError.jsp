@@ -9,8 +9,12 @@
 <html>
 <head>
     <title>Erreur d'authentification - Merci de réessayer !</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
 </head>
 <body>
-
+    <div class="form-box">
+        <h1>Erreur d'autenthification</h1>
+        <a href="newidea">Réessayer</a>
+    </div>
 </body>
 </html>

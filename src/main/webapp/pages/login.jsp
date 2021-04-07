@@ -14,14 +14,14 @@
 <body>
 <div class="form-box">
     <h1>Connectez-vous</h1>
-    <form method="post" action="j_security_check">
+    <form method="POST" action="j_security_check">
         <div>
             <input type="text" name="j_username" id="login" required/>
             <label for="login">Nom d'utilisateur</label>
         </div>
 
         <div>
-            <input type="text" name="j_password" id="pwd" required/>
+            <input type="password" name="j_password" id="pwd" required/>
             <label for="pwd">Mot de passe</label>
         </div>
 
