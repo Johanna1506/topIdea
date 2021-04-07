@@ -37,7 +37,7 @@ public class IdeaService implements IIdeaService {
     @Override
     public void create(IdeaDto ideaDto) {
         Idea idea = new Idea();
-        idea.setDate(LocalDate.now().toString());
+        idea.setDate(LocalDate.now());
         idea.setDescription(ideaDto.getDescription());
         idea.setImage(ideaDto.getImage());
         idea.setTitle(ideaDto.getTitle());

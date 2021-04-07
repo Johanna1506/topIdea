@@ -88,7 +88,7 @@ INSERT INTO UserRole VALUES
 INSERT INTO Category VALUES
 	(1, 'Revolution'),
 	(2, 'Connasse'),
-	(3, 'Rouleur patin');
+	(3, 'Rouleur');
 
 INSERT INTO Idea (date, description, image, title, author_id, category_id) VALUES
 	(20210101, 'Elisons Johanna a la presidence de la planete, ca tombe sous le sens.', 'https://www.groupe-imprim.com/wp-content/uploads/2019/09/election-img2.jpg', 'Johanna Presidente', 2, 1),
