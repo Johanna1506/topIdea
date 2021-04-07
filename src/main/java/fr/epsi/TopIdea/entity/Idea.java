@@ -12,18 +12,15 @@ public class Idea {
     private Long id;
 
     private String date;
+    private String title;
+    private String description;
+    private String image;
 
     @ManyToOne
     private User author;
 
-    private String title;
-
     @ManyToOne
     private Category category;
-
-    private String description;
-
-    private String image;
 
     @OneToMany(mappedBy = "idea")
     private Collection<Vote> votes;
@@ -80,6 +77,14 @@ public class Idea {
         this.author = author;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     public Collection<Vote> getVotes() {
         return votes;
     }
@@ -94,13 +99,5 @@ public class Idea {
 
     public void setComments(Collection<Comment> comments) {
         this.comments = comments;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
     }
 }

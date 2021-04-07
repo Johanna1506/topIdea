@@ -1,7 +1,5 @@
 package fr.epsi.TopIdea.dto;
 
-import fr.epsi.TopIdea.entity.Category;
-
 public class IdeaDto {
     private String title;
     private String category;

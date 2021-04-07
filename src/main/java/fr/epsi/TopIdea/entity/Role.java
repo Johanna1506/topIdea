@@ -12,7 +12,10 @@ public class Role {
 
     private String name;
 
-    @OneToMany(mappedBy = "role")
+    @ManyToMany
+    @JoinTable(name="UserRole",
+                joinColumns = @JoinColumn(name="role_id"),
+                inverseJoinColumns = @JoinColumn(name="user_id"))
     private Collection<User> users;
 
     // getters & setters
