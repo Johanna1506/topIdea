@@ -9,5 +9,6 @@ public interface IIdeaService {
     List<Idea> getAll();
     List<Idea> getTops();
     List<Idea> getBuzz();
+    Idea findOne(Long id);
     void create(IdeaDto ideaDto);
 }

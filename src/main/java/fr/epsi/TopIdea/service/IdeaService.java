@@ -53,6 +53,11 @@ public class IdeaService implements IIdeaService {
 
     @Override
     public List<Idea> getAll() {
-        return null;
+        return this.ideaDao.findAll();
+    }
+
+    @Override
+    public Idea findOne(Long id) {
+        return this.ideaDao.findOne(id);
     }
 }
