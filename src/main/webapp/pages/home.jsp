@@ -14,6 +14,7 @@
 
     </header>
     <a href="auth/newidea">Soumettre Idée</a>
+    <a href="ideas">Toutes les Idées</a>
     <div class="sample-section-wrap">
         <div class="wrapper">
             <div class="header">
