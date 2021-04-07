@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "topServlet", value = "/top")
-public class TopServlet extends HttpServlet {
+@WebServlet(name = "voteServlet", value = "/vote")
+public class VoteServlet extends HttpServlet {
 
     @EJB
     private IIdeaService ideaService;
