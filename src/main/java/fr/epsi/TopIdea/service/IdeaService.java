@@ -50,4 +50,9 @@ public class IdeaService implements IIdeaService {
 
         this.ideaDao.create(idea);
     }
+
+    @Override
+    public List<Idea> getAll() {
+        return null;
+    }
 }

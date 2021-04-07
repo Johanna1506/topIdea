@@ -43,4 +43,10 @@ public class IdeaDao implements IIdeaDao {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public List<Idea> findAll() {
+        List<Idea> ideas = this.entityManager.createQuery("select i from Idea i order by i.date desc").getResultList();
+        return ideas;
+    }
 }
