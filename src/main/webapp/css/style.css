@@ -179,7 +179,12 @@ hr {
 .article {
     text-align: right;
 }
-article button {
+.article div {
+    display: flex;
+}
+.article div a {
+    width: 30px;
+    position: initial;
     background: none;
     color: inherit;
     border: none;
@@ -188,16 +193,16 @@ article button {
     cursor: pointer;
     outline: inherit;
 }
-article button svg {
+.article div a svg {
     width: 30px;
     margin-right: 12px;
     fill: #6817ba;
 }
-article button:nth-of-type(2) {
+.article div a:nth-of-type(2) {
     transform: rotate(180deg);
 
 }
-article button:nth-of-type(2) svg {
+.article div a:nth-of-type(2) svg {
     fill: #a33c84;
 }
 

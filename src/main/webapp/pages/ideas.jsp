@@ -16,7 +16,7 @@
 <body>
     <h1>Toutes les idées</h1>
     <c:forEach items="${ideas}" var="idea" varStatus="variableStatus">
-        <article>
+        <article class="ideas">
             <h2>${idea.title}</h2>
             <p>${idea.description}</p>
             <p>${idea.date}</p>
