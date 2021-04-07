@@ -16,7 +16,17 @@
 <body>
     <h1>Toutes les idées</h1>
     <c:forEach items="${ideas}" var="idea" varStatus="variableStatus">
-        <h2>${idea.title}</h2>
+        <article>
+            <h2>${idea.title}</h2>
+            <p>${idea.description}</p>
+            <p>${idea.date}</p>
+            <c:if test="${idea.image}">
+                <img src="${idea.image}" />
+            </c:if>
+            <p>${idea.author}</p>
+            <p>${idea.category}</p>
+        </article>
+
     </c:forEach>
 </body>
 </html>
