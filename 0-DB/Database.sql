@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS Comment (
     idea_id BIGINT NOT NULL,
     text VARCHAR(500) NOT NULL,
     CONSTRAINT pk_comment PRIMARY KEY (id),
-    CONSTRAINT fk_comment_user FOREIGN KEY (user_id) REFERENCES `User`(id),
+    CONSTRAINT fk_comment_user FOREIGN KEY (author_id) REFERENCES `User`(id),
     CONSTRAINT fk_comment_idea FOREIGN KEY (idea_id) REFERENCES `Idea`(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
