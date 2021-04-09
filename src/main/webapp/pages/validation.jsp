@@ -13,9 +13,8 @@
 </head>
 <body>
     <div class="form-box">
-        <h1>Votre idée a bien été soumise</h1>
+        <h1>C'est noté !</h1>
         <a href="home">Retour à l'accueil</a>
-        <a href="newidea">Soumettre une nouvelle idée</a>
     </div>
 
 </body>
