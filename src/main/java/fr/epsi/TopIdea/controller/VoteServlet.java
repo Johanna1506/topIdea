@@ -33,6 +33,7 @@ public class VoteServlet extends HttpServlet {
         Idea idea = ideaService.findOne(id);
 
         if (idea == null) {
+            request.setAttribute("message", "Impossible de trouver cette idee.");
             this.getServletContext().getRequestDispatcher("/pages/nope.jsp").forward(request, response);
         }
 
@@ -43,7 +44,8 @@ public class VoteServlet extends HttpServlet {
         try {
             voteValue vote = voteValue.valueOf(voteName);
             voteService.addVote(user, idea, vote);
-        } catch(IllegalArgumentException e) {
+        } catch(Exception e) {
+            request.setAttribute("message", e.getMessage());
             this.getServletContext().getRequestDispatcher("/pages/nope.jsp").forward(request, response);
         }
 
