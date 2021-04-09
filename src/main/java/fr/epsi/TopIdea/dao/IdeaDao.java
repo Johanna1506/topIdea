@@ -21,13 +21,18 @@ public class IdeaDao implements IIdeaDao {
 
     @Override
     public List<Idea> findTops() {
-        List<Idea> tops = this.entityManager.createQuery("select i, i.votes.size as totalVotes, v.vote from Idea i join i.votes v where v.vote = 'TOP' order by totalVotes desc").getResultList(); // TODO ecrire la bonne requete :)
-        return tops;
+        // TODO optimiser requete SQL
+        List<Idea> allIdeas = this.findAll();
+        for (Idea idea: allIdeas) {
+            System.out.println(idea);
+        }
+//        List<Idea> tops = this.entityManager.createQuery("select i, i.votes.size as totalVotes, v.vote from Idea i join i.votes v where v.vote = 'TOP' order by totalVotes desc").getResultList(); // TODO ecrire la bonne requete :)
+        return allIdeas;
     }
 
     @Override
     public List<Idea> findBuzz() {
-        List<Idea> buzz = this.entityManager.createQuery("select i from Idea i order by i.votes.size desc")
+        List<Idea> buzz = this.entityManager.createQuery("select i from Idea i order by size(i.votes) desc")
                 .setMaxResults(3)
                 .getResultList();
         return buzz;
