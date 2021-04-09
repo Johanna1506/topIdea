@@ -22,19 +22,15 @@ public class CommentDao implements ICommentDao {
 
     @Override
     public void create(Comment comment) {
-        System.out.println("CommentDao::create");
         System.out.println(comment.getAuthor().getId());
         System.out.println(comment.getIdea().getId());
         System.out.println(comment.getText());
 
         try {
             userTransaction.begin();
-            System.out.println("CommentDao::Start transaction");
             entityManager.persist(comment);
-            System.out.println("CommentDao::After persist");
             userTransaction.commit();
         } catch (Exception e) {
-            System.out.println("CommentDao::Exception");
             e.printStackTrace();
         }
     }

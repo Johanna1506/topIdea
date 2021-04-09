@@ -43,7 +43,6 @@ public class AddCommentServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("Servlet::doPost");
         Long id = Long.parseLong(request.getParameter("id"));
 
         CommentDto commentDto = new CommentDto();
@@ -52,8 +51,6 @@ public class AddCommentServlet extends HttpServlet {
         commentDto.setText(request.getParameter("text"));
 
         commentService.addComment(commentDto);
-
-        System.out.println("Servlet::dispatch");
 
         this.getServletContext().getRequestDispatcher("/pages/validation.jsp").forward(request, response);
     }

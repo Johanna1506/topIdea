@@ -30,8 +30,6 @@ public class CommentService implements ICommentService {
 
     @Override
     public void addComment(CommentDto commentDto) {
-        System.out.println("CommentService::AddComment");
-
         Comment comment = new Comment();
         comment.setText(commentDto.getText());
 
