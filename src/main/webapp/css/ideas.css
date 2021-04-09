@@ -68,7 +68,6 @@ article {
 
 h1 {
     font-size: 20px;
-    margin: 0;
     color: #333;
 }
 
@@ -111,7 +110,18 @@ span {
     fill: #4c1087;
     animation: bounce 0.35s ease infinite alternate;
 }
-
+.like a:nth-of-type(2) svg {
+    transform: rotate(180deg);
+    fill: #a33c84;
+}
+.like a:nth-of-type(2) svg:hover {
+    fill: #662553;
+    animation: bounceTwo 0.35s ease infinite alternate;
+}
+.idea {
+    width: 60%;
+    margin: 12px auto;
+}
 @media (min-width: 60em) {
     .item-1 {
         grid-column: 1 / span 2;

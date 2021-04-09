@@ -25,14 +25,12 @@
                 <figure class="featured-image-${count}">
                     <img src="${idea.image}" alt="photo top">
                 </figure>
-                <article class="article article-${count} />">
+                <article class="article article-${count}">
                     <h2>${idea.title}</h2>
                     <p>${idea.description}</p>
-
                     <div>
                         <a href="vote?id=${idea.id}&vote=TOP">
                             <svg viewBox="0 0 512 512" >
-
                                 <path d="M53.333,224C23.936,224,0,247.936,0,277.333V448c0,29.397,23.936,53.333,53.333,53.333h64
                             c12.011,0,23.061-4.053,32-10.795V224H53.333z"/>
 
@@ -44,8 +42,7 @@
                             </svg>
                         </a>
                         <a href="vote?id=${idea.id}&vote=FLOP">
-                            <svg viewBox="0 0 512 512" >
-
+                            <svg viewBox="0 0 512 512">
                                 <path d="M53.333,224C23.936,224,0,247.936,0,277.333V448c0,29.397,23.936,53.333,53.333,53.333h64
                             c12.011,0,23.061-4.053,32-10.795V224H53.333z"/>
 

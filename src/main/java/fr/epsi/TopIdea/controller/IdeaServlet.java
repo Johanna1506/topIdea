@@ -24,7 +24,12 @@ public class IdeaServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Long id = Long.parseLong(request.getParameter("id"));
         Idea idea = ideaService.findOne(id);
+        String author = idea.getAuthor().getUsername();
+        String category = idea.getCategory().getName();
+
         request.setAttribute("idea", idea);
+        request.setAttribute("author", author);
+        request.setAttribute("category", category);
 
         this.getServletContext().getRequestDispatcher("/pages/idea.jsp").forward(request, response);
     }
