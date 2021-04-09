@@ -32,8 +32,8 @@ public class HomeServlet extends HttpServlet {
         List<Idea> buzz = this.ideaService.getBuzz();
         request.setAttribute("buzz", buzz);
 
-//        System.out.println(request.getUserPrincipal());
-//        System.out.println(request.isUserInRole("ADMIN"));
+        System.out.println(request.getUserPrincipal());
+        System.out.println(request.isUserInRole("ADMIN"));
 
         this.getServletContext().getRequestDispatcher("/pages/home.jsp").forward(request, response);
     }
