@@ -34,9 +34,14 @@ public class VoteDao implements IVoteDao {
 
     @Override
     public boolean exists(User user, Idea idea) {
-        return (this.entityManager.createQuery("select v from Vote v where v.user = :user and v.idea = :idea")
-                .setParameter("user", user)
-                .setParameter("idea", idea)
-                .getSingleResult() != null);
+        try {
+            Vote vote = (Vote) this.entityManager.createQuery("select v from Vote v where v.user = :user and v.idea = :idea")
+                    .setParameter("user", user)
+                    .setParameter("idea", idea)
+                    .getSingleResult();
+            return true;
+        } catch(Exception e) {
+            return false;
+        }
     }
 }
