@@ -18,7 +18,7 @@ public class VoteService implements IVoteService {
 
     @Override
     public void addVote(User user, Idea idea, voteValue value) {
-        if (idea.getAuthor() == user) {
+        if (idea.getAuthor().getId().equals(user.getId())) {
             throw new IllegalArgumentException("Vous ne pouvez pas voter pour votre propre idee.");
         }
 
