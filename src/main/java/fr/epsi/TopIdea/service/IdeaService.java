@@ -10,7 +10,7 @@ import fr.epsi.TopIdea.entity.User;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import java.time.LocalDate;
-import java.util.List;
+import java.util.*;
 
 @Stateless
 public class IdeaService implements IIdeaService {

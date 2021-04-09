@@ -3,6 +3,7 @@ package fr.epsi.TopIdea.dao;
 import fr.epsi.TopIdea.entity.Idea;
 import fr.epsi.TopIdea.entity.User;
 import fr.epsi.TopIdea.entity.Vote;
+import fr.epsi.TopIdea.entity.voteValue;
 
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
@@ -11,6 +12,7 @@ import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
+import java.util.List;
 
 @Stateless
 @TransactionManagement(TransactionManagementType.BEAN)
@@ -43,5 +45,22 @@ public class VoteDao implements IVoteDao {
         } catch(Exception e) {
             return false;
         }
+    }
+
+    @Override
+    public Long getVotesCount(Idea idea) {
+        Long votes = (Long) this.entityManager.createQuery("select count(v) from Vote v where  v.idea = :idea")
+                .setParameter("idea", idea)
+                .getSingleResult();
+        return votes;
+    }
+
+    @Override
+    public Long getTopVotes(Idea idea) {
+        Long topVotes = (Long) this.entityManager.createQuery("select count(v) from Vote v where  v.idea = :idea and v.vote = :vote")
+                .setParameter("idea", idea)
+                .setParameter("vote", voteValue.TOP)
+                .getSingleResult();
+        return topVotes;
     }
 }

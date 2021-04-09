@@ -10,6 +10,7 @@ import fr.epsi.TopIdea.entity.voteValue;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import java.time.LocalDate;
+import java.util.List;
 
 @Stateless
 public class VoteService implements IVoteService {
@@ -36,5 +37,18 @@ public class VoteService implements IVoteService {
         vote.setVote(value);
 
         this.voteDao.addVote(vote);
+    }
+
+    @Override
+    public Float calcTopPercentage(Idea idea) {
+        Long tops = this.voteDao.getTopVotes(idea);
+        Long total = this.voteDao.getVotesCount(idea);
+
+        if (total == null || total == 0F) {
+            return 0F;
+        } else {
+            float prctg = (float) tops / total;
+            return prctg;
+        }
     }
 }

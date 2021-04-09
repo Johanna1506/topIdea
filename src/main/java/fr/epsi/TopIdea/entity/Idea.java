@@ -2,7 +2,6 @@ package fr.epsi.TopIdea.entity;
 
 
 import javax.persistence.*;
-import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.Collection;
 
