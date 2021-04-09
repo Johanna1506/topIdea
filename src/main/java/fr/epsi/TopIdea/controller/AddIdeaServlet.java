@@ -42,6 +42,7 @@ public class AddIdeaServlet extends HttpServlet {
 
         ideaService.create(ideaDto);
 
+        request.setAttribute("message", "Votre idée a été enregistrée.");
         this.getServletContext().getRequestDispatcher("/pages/validation.jsp").forward(request, response);
     }
 }

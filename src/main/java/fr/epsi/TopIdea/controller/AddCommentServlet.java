@@ -51,6 +51,7 @@ public class AddCommentServlet extends HttpServlet {
 
         commentService.addComment(commentDto);
 
+        request.setAttribute("message", "Votre commentaire a été enregistré.");
         this.getServletContext().getRequestDispatcher("/pages/validation.jsp").forward(request, response);
     }
 }

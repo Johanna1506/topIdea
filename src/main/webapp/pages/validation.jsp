@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="form-box">
-        <h1>C'est noté !</h1>
+        <h1>${message}</h1>
         <a href="home">Retour à l'accueil</a>
     </div>
 
