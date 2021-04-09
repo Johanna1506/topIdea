@@ -45,7 +45,8 @@ public class VoteServlet extends HttpServlet {
             voteValue vote = voteValue.valueOf(voteName);
             voteService.addVote(user, idea, vote);
         } catch(Exception e) {
-            request.setAttribute("message", e.getMessage());
+            String message = e.getMessage().substring(e.getMessage().indexOf(':')+1).trim();
+            request.setAttribute("message", message);
             this.getServletContext().getRequestDispatcher("/pages/nope.jsp").forward(request, response);
         }
 
