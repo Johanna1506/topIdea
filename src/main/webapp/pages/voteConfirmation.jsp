@@ -17,6 +17,5 @@
         <a href="idea?id=${idea.id}">Retour à l'idée</a>
         <a href="comment?id=${idea.id}">Commenter cette idée</a>
     </div>
-
 </body>
 </html>

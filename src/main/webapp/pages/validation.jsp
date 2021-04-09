@@ -14,7 +14,7 @@
 <body>
     <div class="form-box">
         <h1>${message}</h1>
-        <a href="home">Retour à l'accueil</a>
+        <a href="/TopIdea-1.0-SNAPSHOT/home">Retour à l'accueil</a>
     </div>
 
 </body>

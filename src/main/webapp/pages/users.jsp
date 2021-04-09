@@ -27,6 +27,6 @@
             </a>
         </c:forEach>
     </div>
-    <a href="home" class="home">Retour à l'accueil</a>
+    <a href="/TopIdea-1.0-SNAPSHOT/home" class="home">Retour à l'accueil</a>
 </body>
 </html>
