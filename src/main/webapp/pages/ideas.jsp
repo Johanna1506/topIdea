@@ -10,23 +10,24 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/ideas.css" />
     <title>Top Ideas</title>
 </head>
 <body>
+<header>
     <h1>Toutes les idées</h1>
+</header>
+<div class="band">
     <c:forEach items="${ideas}" var="idea" varStatus="variableStatus">
-        <article class="ideas">
-            <h2>${idea.title}</h2>
-            <p>${idea.description}</p>
-            <p>${idea.date}</p>
-            <c:if test="${idea.image}">
-                <img src="${idea.image}" />
-            </c:if>
-            <p>${idea.author}</p>
-            <p>${idea.category}</p>
-        </article>
-
+        <div class="item-1">
+            <div class="thumb" style="background-image: url(${idea.image});"></div>
+            <article>
+                <h1>${idea.title}</h1>
+                <span>${idea.description}</span>
+            </article>
+        </div>
     </c:forEach>
+    </div>
+</div>
 </body>
 </html>
