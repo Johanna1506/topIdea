@@ -25,7 +25,6 @@ public class HomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Idea> tops = this.ideaService.getTops();
         request.setAttribute("tops", tops);
-        System.out.println(tops);
 
         List<User> brains = this.userService.getBrains();
         request.setAttribute("brains", brains);
