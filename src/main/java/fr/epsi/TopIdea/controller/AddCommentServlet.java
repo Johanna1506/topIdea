@@ -4,9 +4,11 @@ import fr.epsi.TopIdea.dto.CommentDto;
 import fr.epsi.TopIdea.dto.IdeaDto;
 import fr.epsi.TopIdea.entity.Category;
 import fr.epsi.TopIdea.entity.Idea;
+import fr.epsi.TopIdea.entity.User;
 import fr.epsi.TopIdea.service.ICategoryService;
 import fr.epsi.TopIdea.service.ICommentService;
 import fr.epsi.TopIdea.service.IIdeaService;
+import fr.epsi.TopIdea.service.IUserService;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -26,8 +28,17 @@ public class AddCommentServlet extends HttpServlet {
     @EJB
     private IIdeaService ideaService;
 
+    @EJB
+    private IUserService userService;
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        User user = userService.findByName(request.getUserPrincipal().getName());
+        if (!user.isActive()) {
+            request.setAttribute("message", "Votre compte a été désactivé.");
+            this.getServletContext().getRequestDispatcher("/pages/nope.jsp").forward(request, response);
+        }
+
         Long id = Long.parseLong(request.getParameter("id"));
         Idea idea = ideaService.findOne(id);
 
@@ -42,6 +53,12 @@ public class AddCommentServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        User user = userService.findByName(request.getUserPrincipal().getName());
+        if (!user.isActive()) {
+            request.setAttribute("message", "Votre compte a été désactivé.");
+            this.getServletContext().getRequestDispatcher("/pages/nope.jsp").forward(request, response);
+        }
+
         Long id = Long.parseLong(request.getParameter("id"));
 
         CommentDto commentDto = new CommentDto();

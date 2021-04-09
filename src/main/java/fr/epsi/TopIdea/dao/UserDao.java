@@ -28,4 +28,11 @@ public class UserDao implements IUserDao {
         User user = (User) this.entityManager.createQuery("select u from User u where u.username = :username").setParameter("username", name).getSingleResult();
         return user;
     }
+
+    @Override
+    public List<User> getAll() {
+        List<User> users = this.entityManager.createQuery("select u from User u")
+                .getResultList();
+        return users;
+    }
 }

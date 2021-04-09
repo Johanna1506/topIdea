@@ -22,4 +22,9 @@ public class UserService implements IUserService {
     public List<User> getBrains() {
         return this.userDao.findBrains();
     }
+
+    @Override
+    public List<User> getAll() {
+        return this.userDao.getAll();
+    }
 }

@@ -29,6 +29,12 @@ public class VoteServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        User user = userService.findByName(request.getUserPrincipal().getName());
+        if (!user.isActive()) {
+            request.setAttribute("message", "Votre compte a été désactivé.");
+            this.getServletContext().getRequestDispatcher("/pages/nope.jsp").forward(request, response);
+        }
+
         Long id = Long.parseLong(request.getParameter("id"));
         Idea idea = ideaService.findOne(id);
 
@@ -37,11 +43,9 @@ public class VoteServlet extends HttpServlet {
             this.getServletContext().getRequestDispatcher("/pages/nope.jsp").forward(request, response);
         }
 
-        String username = request.getUserPrincipal().getName();
         String voteName = request.getParameter("vote");
 
         try {
-            User user = userService.findByName(username);
             int vote;
             switch (voteName) {
                 case "TOP":

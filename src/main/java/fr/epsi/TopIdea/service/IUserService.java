@@ -7,4 +7,5 @@ import java.util.List;
 public interface IUserService {
     User findByName(String name);
     List<User> getBrains();
+    List<User> getAll();
 }
