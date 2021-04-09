@@ -8,6 +8,7 @@ import fr.epsi.TopIdea.service.IUserService;
 import fr.epsi.TopIdea.service.IVoteService;
 
 import javax.ejb.EJB;
+import javax.persistence.NoResultException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -38,18 +39,22 @@ public class VoteServlet extends HttpServlet {
         }
 
         String username = request.getUserPrincipal() != null ? request.getUserPrincipal().getName() : "camille";
-        User user = userService.findByName(username);
-
         String voteName = request.getParameter("vote");
+
         try {
+            User user = userService.findByName(username);
             voteValue vote = voteValue.valueOf(voteName);
             voteService.addVote(user, idea, vote);
-        } catch(Exception e) {
+            request.setAttribute("idea", idea);
+            this.getServletContext().getRequestDispatcher("/pages/voteConfirmation.jsp").forward(request, response);
+        } catch(NoResultException e) {
+            request.setAttribute("message", "Cet utilisateur n'existe pas.");
+            this.getServletContext().getRequestDispatcher("/pages/nope.jsp").forward(request, response);
+        }
+        catch(Exception e) {
             String message = e.getMessage().substring(e.getMessage().indexOf(':')+1).trim();
             request.setAttribute("message", message);
             this.getServletContext().getRequestDispatcher("/pages/nope.jsp").forward(request, response);
         }
-
-        this.getServletContext().getRequestDispatcher("/pages/ideas.jsp").forward(request, response);
     }
 }
