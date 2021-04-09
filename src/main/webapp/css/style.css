@@ -181,6 +181,7 @@ hr {
 }
 .article div {
     display: flex;
+    justify-content: space-evenly;
 }
 .article div a {
     width: 30px;
@@ -197,13 +198,49 @@ hr {
     width: 30px;
     margin-right: 12px;
     fill: #6817ba;
+    transition: all 1s ease-out;
 }
-.article div a:nth-of-type(2) {
-    transform: rotate(180deg);
+.article div a svg:hover {
+    fill: #4c1087;
+    animation: bounce 0.35s ease infinite alternate;
+}
 
-}
 .article div a:nth-of-type(2) svg {
+    transform: rotate(180deg);
     fill: #a33c84;
+}
+.article div a:nth-of-type(2) svg:hover {
+    fill: #662553;
+    animation: bounceTwo 0.35s ease infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: rotate(-10deg);
+    }
+    25% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+@keyframes bounceTwo {
+    0% {
+        transform: rotate(170deg);
+    }
+    25% {
+        transform: rotate(190deg);
+    }
+    50% {
+        transform: rotate(170deg);
+    }
+    100% {
+        transform: rotate(190deg);
+    }
 }
 
 .featured-image-1 {
