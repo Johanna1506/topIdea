@@ -28,9 +28,7 @@
                 <article class="article article-${count} />">
                     <h2>${idea.title}</h2>
                     <p>${idea.description}</p>
-                    <div>
 
-                    </div>
                     <div>
                         <a href="vote?id=${idea.id}&vote=TOP">
                             <svg viewBox="0 0 512 512" >
