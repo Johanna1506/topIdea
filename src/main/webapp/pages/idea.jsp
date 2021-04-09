@@ -5,7 +5,10 @@
   Time: 14:47
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
     <title>${idea.title}</title>
@@ -19,8 +22,21 @@
       </div>
       <div class="card-info">
           ${idea.description}
-          <a href="home" class="home">Retour à l'accueil <span class="licon icon-arr icon-black"></span></a>
-          <a href="ideas" class="back">Toutes les idées<span class="licon icon-arr icon-black"></span></a>
+            <ul>
+                <c:forEach items="${comments}" var="comment" varStatus="variableStatus" end="2">
+                    <li>
+                        <svg viewBox="0 -45 512 511">
+                            <path d="m407 .5h-302c-57.898438 0-105 47.101562-105 105v162.171875c0 46.199219 30.332031 86.4375 74.285156 99.316406l50.710938 50.714844c2.816406 2.8125 6.628906 4.394531 10.609375 4.394531 3.976562 0 7.792969-1.582031 10.605469-4.394531l46.519531-46.523437h214.269531c57.898438 0 105-47.101563 105-105v-160.679688c0-57.898438-47.101562-105-105-105zm75 265.679688c0 41.355468-33.644531 75-75 75h-220.480469c-3.976562 0-7.792969 1.582031-10.605469 4.394531l-40.308593 40.308593-42.929688-42.929687c-1.925781-1.925781-4.339843-3.292969-6.984375-3.949219-32.789062-8.160156-55.691406-37.492187-55.691406-71.332031v-162.171875c0-41.355469 33.644531-75 75-75h302c41.355469 0 75 33.644531 75 75zm0 0"/>
+                            <path d="m351.242188 144.328125h-190.484376c-8.285156 0-15 6.71875-15 15 0 8.285156 6.714844 15 15 15h190.484376c8.285156 0 15-6.714844 15-15 0-8.28125-6.714844-15-15-15zm0 0"/>
+                            <path d="m351.242188 197.351562h-190.484376c-8.285156 0-15 6.714844-15 15 0 8.285157 6.714844 15 15 15h190.484376c8.285156 0 15-6.714843 15-15 0-8.285156-6.714844-15-15-15zm0 0"/>
+                        </svg>
+                        <div>
+                            <p>${comment.text}</p>
+                        </div>
+                    </li>
+                </c:forEach>
+            </ul>
+
       </div>
       <div class="utility-info">
           <ul class="utility-list">
@@ -40,7 +56,7 @@
               </li>
               <li>
                   <a href="vote?id=${idea.id}&vote=FLOP">
-                      <svg viewBox="0 0 512 512" >
+                      <svg viewBox="0 0 512 512" class="dislike">
                           <path d="M53.333,224C23.936,224,0,247.936,0,277.333V448c0,29.397,23.936,53.333,53.333,53.333h64
                             c12.011,0,23.061-4.053,32-10.795V224H53.333z"/>
 
@@ -73,5 +89,8 @@
       <div class="gradient-overlay"></div>
       <div class="color-overlay"></div>
     </div>
+    <a href="home" class="home">Retour à l'accueil <span class="licon icon-arr icon-black"></span></a>
+    <a href="ideas" class="back">Toutes les idées<span class="licon icon-arr icon-black"></span></a>
+
 </body>
 </html>
