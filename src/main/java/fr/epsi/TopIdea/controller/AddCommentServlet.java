@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "addCommentServlet", value = "/comment")
+@WebServlet(name = "addCommentServlet", value = "/auth/comment")
 public class AddCommentServlet extends HttpServlet {
 
     @EJB

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "voteServlet", value = "/vote")
+@WebServlet(name = "voteServlet", value = "/auth/vote")
 public class VoteServlet extends HttpServlet {
 
     @EJB

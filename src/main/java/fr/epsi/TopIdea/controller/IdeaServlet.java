@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ideaServlet", value = "/idea")
+@WebServlet(name = "ideaServlet", value = "/auth/idea")
 public class IdeaServlet extends HttpServlet {
 
     @EJB

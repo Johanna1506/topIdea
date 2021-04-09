@@ -6,11 +6,11 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" />
-    <title>Top Ideas</title>
+    <title>TopIdea</title>
 </head>
 <body>
     <header>
-        <h1>Top Idea, top ou flop ?</h1>
+        <h1>TopIdea, top ou flop ?</h1>
 
     </header>
     <a href="auth/newidea">Soumettre Idée</a>
@@ -29,7 +29,7 @@
                     <h2>${idea.title}</h2>
                     <p>${idea.description}</p>
                     <div>
-                        <a href="vote?id=${idea.id}&vote=TOP">
+                        <a href="auth/vote?id=${idea.id}&vote=TOP">
                             <svg viewBox="0 0 512 512" >
                                 <path d="M53.333,224C23.936,224,0,247.936,0,277.333V448c0,29.397,23.936,53.333,53.333,53.333h64
                             c12.011,0,23.061-4.053,32-10.795V224H53.333z"/>
@@ -41,7 +41,7 @@
                             c15.765-7.936,26.368-24.171,26.368-42.688c0-7.552-1.728-14.784-5.013-21.333C501.419,338.731,512,322.496,512,304z"/>
                             </svg>
                         </a>
-                        <a href="vote?id=${idea.id}&vote=FLOP">
+                        <a href="auth/vote?id=${idea.id}&vote=FLOP">
                             <svg viewBox="0 0 512 512">
                                 <path d="M53.333,224C23.936,224,0,247.936,0,277.333V448c0,29.397,23.936,53.333,53.333,53.333h64
                             c12.011,0,23.061-4.053,32-10.795V224H53.333z"/>
@@ -91,7 +91,7 @@
                     <h2>${idea.title}</h2>
                     <p>${idea.description}</p>
                     <div>
-                        <a href="vote?id=${idea.id}&vote=TOP">
+                        <a href="auth/vote?id=${idea.id}&vote=TOP">
                             <svg viewBox="0 0 512 512" >
 
                                 <path d="M53.333,224C23.936,224,0,247.936,0,277.333V448c0,29.397,23.936,53.333,53.333,53.333h64
@@ -104,7 +104,7 @@
                             c15.765-7.936,26.368-24.171,26.368-42.688c0-7.552-1.728-14.784-5.013-21.333C501.419,338.731,512,322.496,512,304z"/>
                             </svg>
                         </a>
-                        <a href="vote?id=${idea.id}&vote=FLOP">
+                        <a href="auth/vote?id=${idea.id}&vote=FLOP">
                             <svg viewBox="0 0 512 512" >
 
                                 <path d="M53.333,224C23.936,224,0,247.936,0,277.333V448c0,29.397,23.936,53.333,53.333,53.333h64
