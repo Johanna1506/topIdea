@@ -2,7 +2,6 @@ package fr.epsi.TopIdea.controller;
 
 import fr.epsi.TopIdea.entity.Idea;
 import fr.epsi.TopIdea.entity.User;
-import fr.epsi.TopIdea.entity.voteValue;
 import fr.epsi.TopIdea.service.IIdeaService;
 import fr.epsi.TopIdea.service.IUserService;
 import fr.epsi.TopIdea.service.IVoteService;
@@ -43,7 +42,17 @@ public class VoteServlet extends HttpServlet {
 
         try {
             User user = userService.findByName(username);
-            voteValue vote = voteValue.valueOf(voteName);
+            int vote;
+            switch (voteName) {
+                case "TOP":
+                    vote = 1;
+                    break;
+                case "FLOP":
+                    vote = 0;
+                    break;
+                default:
+                    throw new IllegalArgumentException("Erreur de vote!");
+            }
             voteService.addVote(user, idea, vote);
             request.setAttribute("idea", idea);
             this.getServletContext().getRequestDispatcher("/pages/voteConfirmation.jsp").forward(request, response);

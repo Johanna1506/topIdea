@@ -8,6 +8,7 @@ import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
+import java.util.ArrayList;
 import java.util.List;
 
 @Stateless
@@ -21,8 +22,16 @@ public class IdeaDao implements IIdeaDao {
 
     @Override
     public List<Idea> findTops() {
-        List<Idea> tops = this.entityManager.createQuery("SELECT i, COUNT(v) AS TotalVotes, i.date AS Date, 100*SUM(v.vote)/COUNT(v.vote) AS TopPercentage FROM Idea i LEFT OUTER JOIN Vote v ON v.idea = i GROUP BY i ORDER BY TopPercentage DESC, TotalVotes DESC, Date DESC")
+        List<Object[]> rawTops = this.entityManager.createQuery("SELECT i, COUNT(v) AS TotalVotes, 100.0 * SUM(v.vote)/COUNT(v.vote) AS TopPercentage FROM Idea i LEFT OUTER JOIN Vote v ON v.idea = i GROUP BY i.id ORDER BY TopPercentage DESC, TotalVotes DESC, i.date DESC")
+                .setMaxResults(3)
                 .getResultList();
+        List<Idea> tops = new ArrayList<>();
+
+        for (Object[] entry: rawTops) {
+            Idea idea = (Idea) entry[0];
+            tops.add(idea);
+        }
+
         return tops;
     }
 

@@ -15,7 +15,7 @@ public class Vote {
     @ManyToOne
     private Idea idea;
 
-    private voteValue vote;
+    private int vote;
 
     // getters & setters
     public Long getId() {
@@ -42,11 +42,11 @@ public class Vote {
         this.idea = idea;
     }
 
-    public voteValue getVote() {
+    public int getVote() {
         return vote;
     }
 
-    public void setVote(voteValue vote) {
+    public void setVote(int vote) {
         this.vote = vote;
     }
 }
