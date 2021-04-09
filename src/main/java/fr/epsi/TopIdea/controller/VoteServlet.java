@@ -37,7 +37,7 @@ public class VoteServlet extends HttpServlet {
             this.getServletContext().getRequestDispatcher("/pages/nope.jsp").forward(request, response);
         }
 
-        String username = request.getUserPrincipal() != null ? request.getUserPrincipal().getName() : "camille";
+        String username = request.getUserPrincipal().getName();
         String voteName = request.getParameter("vote");
 
         try {

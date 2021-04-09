@@ -37,7 +37,6 @@ public class AddCommentServlet extends HttpServlet {
         }
         request.setAttribute("idea", idea);
 
-        request.getSession().setAttribute("username", "toto");
         this.getServletContext().getRequestDispatcher("/pages/formComment.jsp").forward(request, response);
     }
 
@@ -46,7 +45,7 @@ public class AddCommentServlet extends HttpServlet {
         Long id = Long.parseLong(request.getParameter("id"));
 
         CommentDto commentDto = new CommentDto();
-        commentDto.setAuthor(request.getSession().getAttribute("username").toString());
+        commentDto.setAuthor(request.getUserPrincipal().getName());
         commentDto.setIdea(id);
         commentDto.setText(request.getParameter("text"));
 

@@ -28,7 +28,6 @@ public class AddIdeaServlet extends HttpServlet {
         List<Category> categories = this.categoryService.findAll();
         request.setAttribute("categories", categories);
 
-        request.getSession().setAttribute("username", "toto");
         this.getServletContext().getRequestDispatcher("/pages/formIdea.jsp").forward(request, response);
     }
 
@@ -39,7 +38,7 @@ public class AddIdeaServlet extends HttpServlet {
         ideaDto.setCategory(request.getParameter("category"));
         ideaDto.setDescription(request.getParameter("description"));
         ideaDto.setImage(request.getParameter("image"));
-        ideaDto.setAuthor(request.getSession().getAttribute("username").toString());
+        ideaDto.setAuthor(request.getUserPrincipal().getName());
 
         ideaService.create(ideaDto);
 
