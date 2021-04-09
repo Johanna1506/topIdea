@@ -7,7 +7,7 @@ a {
     bottom: 20px;
     left: 10px;
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 24px;
     color: #03e9f4;
     font-size: 11px;
     text-decoration: none;
@@ -39,6 +39,7 @@ a:hover {
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
 }
+
 .form-box h1 {
     margin: 0 0 30px;
     padding: 0;
@@ -69,6 +70,10 @@ a:hover {
     color: #fff;
     pointer-events: none;
     transition: .5s;
+}
+.form-box p {
+    font-size: 16px;
+    color: #fff;
 }
 .form-box div select:focus ~ label,
 .form-box div input:focus ~ label,
@@ -101,6 +106,7 @@ a:hover {
 
 .form-box a {
     position: initial;
+    width: 222px;
 }
 
 /* BODY */
