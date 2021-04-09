@@ -23,7 +23,6 @@ public class IdeaDao implements IIdeaDao {
     public List<Idea> findTops() {
         // TODO optimiser requete SQL
         List<Idea> allIdeas = this.findAll();
-//        List<Idea> ideas = this.entityManager.createQuery("select i, v.vote from Idea i inner join Vote v on v.idea = i order by size(i.votes) desc");
         for (Idea idea: allIdeas) {
             System.out.println(idea);
         }
