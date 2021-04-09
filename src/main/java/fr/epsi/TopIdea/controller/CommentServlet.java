@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "voteServlet", value = "/vote")
-public class VoteServlet extends HttpServlet {
+@WebServlet(name = "voteServlet", value = "/comment")
+public class CommentServlet extends HttpServlet {
 
     @EJB
     private IIdeaService ideaService;
@@ -40,16 +40,14 @@ public class VoteServlet extends HttpServlet {
         String username = request.getUserPrincipal() != null ? request.getUserPrincipal().getName() : "camille";
         User user = userService.findByName(username);
 
-        String voteName = request.getParameter("vote");
         try {
-            voteValue vote = voteValue.valueOf(voteName);
-            voteService.addVote(user, idea, vote);
-            request.setAttribute("idea", idea);
-            this.getServletContext().getRequestDispatcher("/pages/voteConfirmation.jsp").forward(request, response);
+
         } catch(Exception e) {
             String message = e.getMessage().substring(e.getMessage().indexOf(':')+1).trim();
             request.setAttribute("message", message);
             this.getServletContext().getRequestDispatcher("/pages/nope.jsp").forward(request, response);
         }
+
+//        this.getServletContext().getRequestDispatcher("/pages/idea?id=${}.jsp").forward(request, response);
     }
 }
