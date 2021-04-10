@@ -35,6 +35,27 @@ public class UserService implements IUserService {
     }
 
     @Override
+    public List<List<User>> sortUsersByRole() {
+        List<User> allUsers = this.getAll();
+        List<User> admins = new ArrayList<>();
+        List<User> users = new ArrayList<>();
+        for (User user: allUsers) {
+            for (Role role: user.getRoles()) {
+                if ("ADMIN".equals(role.getName())) {
+                    admins.add(user);
+                }
+            }
+            if (!admins.contains(user)) {
+                users.add(user);
+            }
+        }
+        List<List<User>> sorted = new ArrayList<List<User>>();
+        sorted.add(admins);
+        sorted.add(users);
+        return sorted;
+    }
+
+    @Override
     public User findOne(Long id) {
         return this.userDao.findOne(id);
     }

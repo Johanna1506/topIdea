@@ -30,6 +30,7 @@ public class UserServlet extends HttpServlet {
         request.setAttribute("user", user);
 
         request.setAttribute("admin", user.isAdmin());
+        request.setAttribute("active", user.isActive());
 
         this.getServletContext().getRequestDispatcher("/pages/user.jsp").forward(request, response);
     }

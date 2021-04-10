@@ -109,7 +109,10 @@ a:hover {
 
 .form-box a {
     position: initial;
-    width: 222px;
+    width: 100%;
+    font-size: 16px;
+    text-align: left;
+    padding: 10px 20px;
 }
 
 /* BODY */

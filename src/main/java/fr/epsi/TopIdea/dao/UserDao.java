@@ -41,6 +41,20 @@ public class UserDao implements IUserDao {
         return users;
     }
 
+//    @Override
+//    public List<User> getAdmins() {
+//        List<User> admins = this.entityManager.createQuery("select u from User u where (select r from Role r where r.name='ADMIN') in u.roles")
+//                .getResultList();
+//        return admins;
+//    }
+//
+//    @Override
+//    public List<User> getUsers() {
+//        List<User> users = this.entityManager.createQuery("select u from User u where (select r from Role r where r.name='ADMIN') not in u.roles")
+//                .getResultList();
+//        return users;
+//    }
+
     @Override
     public User findOne(Long id) {
         User user = (User) this.entityManager.createQuery("select u from User u where u.id = :id").setParameter("id", id).getSingleResult();

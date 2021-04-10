@@ -9,6 +9,7 @@ public interface IUserService {
     User findByName(String name);
     List<User> getBrains();
     List<User> getAll();
+    List<List<User>> sortUsersByRole();
     User findOne(Long id);
     void deactivate(User user);
     void activate(User user);

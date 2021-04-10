@@ -21,7 +21,11 @@ public class AdminServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<User> users = this.userService.getAll();
+        List<List<User>> sorted = this.userService.sortUsersByRole();
+        List<User> admins = sorted.get(0);
+        List<User> users = sorted.get(1);
+
+        request.setAttribute("admins", admins);
         request.setAttribute("users", users);
 
         this.getServletContext().getRequestDispatcher("/pages/users.jsp").forward(request, response);

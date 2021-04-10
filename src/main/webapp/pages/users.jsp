@@ -10,28 +10,43 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/ideas.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/users.css" />
     <title>Top Ideas</title>
 </head>
 <body>
-    <header>
-        <h1>Utilisateurs</h1>
-    </header>
-    <div class="band">
-        <c:forEach items="${users}" var="user" varStatus="variableStatus">
-            <a href="user?id=${user.id}" class="card">
-                <div class="thumb" style="background-image: url(${idea.image});"></div>
-                <article>
-                    <h1>${user.username}</h1>
-                    <ul>
-                    <c:forEach items="${user.roles}" var="role" varStatus="variableStatus">
-                        <li>${role.name}</li>
-                    </c:forEach>
-                    </ul>
-                </article>
-            </a>
+<div class="band">
+    <h1>Administrateurs</h1>
+    <div class="cards-list">
+        <c:forEach items="${admins}" var="admin" varStatus="variableStatus">
+            <div class="card 1">
+                <div class="card_image">
+                    <img src="https://i.redd.it/b3esnz5ra34y.jpg" />
+                </div>
+                <div class="card_title title-white">
+                    <h3>${admin.id}</h3>
+                    <p><a href="user?id=${user.id}">${admin.username}</a></p>
+                </div>
+            </div>
         </c:forEach>
     </div>
+</div>
+
+<div class="band">
+    <h1>Utilisateurs</h1>
+    <div class="cards-list">
+        <c:forEach items="${users}" var="user" varStatus="variableStatus">
+            <div class="card 1">
+                <div class="card_image">
+                    <img src="https://i.redd.it/b3esnz5ra34y.jpg" />
+                </div>
+                <div class="card_title title-white">
+                    <h3>${user.id}</h3>
+                    <p><a href="user?id=${user.id}">${user.username}</a></p>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
+</div>
     <a href="/TopIdea-1.0-SNAPSHOT/home" class="home">Retour à l'accueil</a>
 </body>
 </html>

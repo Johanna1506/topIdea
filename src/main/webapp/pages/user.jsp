@@ -22,16 +22,22 @@
       <div class="utility-info">
           <ul class="utility-list">
               <c:if test="${false==admin}">
-                  <li>
-                      <a href="update?id=${user.id}&action=activate">
-                          Activer
-                      </a>
-                  </li>
-                  <li>
-                      <a href="update?id=${user.id}&action=deactivate">
-                          Desactiver
-                      </a>
-                  </li>
+                  <c:choose>
+                      <c:when test="${false==active}">
+                          <li>
+                              <a href="update?id=${user.id}&action=activate">
+                                  Activer
+                              </a>
+                          </li>
+                      </c:when>
+                      <c:when test="${true==active}">
+                          <li>
+                              <a href="update?id=${user.id}&action=deactivate">
+                                  Desactiver
+                              </a>
+                          </li>
+                      </c:when>
+                  </c:choose>
                   <li>
                       <a href="update?id=${user.id}&action=suppress">
                           Supprimer
