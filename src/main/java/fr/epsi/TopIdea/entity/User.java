@@ -14,7 +14,7 @@ public class User {
     private String password;
     private boolean isActive;
 
-    @ManyToMany(mappedBy = "users")
+    @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
     private Collection<Role> roles;
 
     @OneToMany(mappedBy = "author", cascade = CascadeType.REMOVE)
@@ -27,6 +27,14 @@ public class User {
     private Collection<Comment> comments;
 
     // business methods
+    public boolean isAdmin() {
+        for (Role role: roles) {
+            if (role.getName().equals("ADMIN")) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     // getters & setters
     public Long getId() {

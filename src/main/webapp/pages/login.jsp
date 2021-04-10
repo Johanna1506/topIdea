@@ -27,6 +27,7 @@
 
         <input type="submit" value="Connexion" />
     </form>
+    <a href="/TopIdea-1.0-SNAPSHOT/home">Retour à l'accueil</a>
 </div>
 </body>
 </html>

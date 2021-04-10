@@ -29,6 +29,8 @@ public class UserServlet extends HttpServlet {
         User user = userService.findOne(id);
         request.setAttribute("user", user);
 
+        request.setAttribute("admin", user.isAdmin());
+
         this.getServletContext().getRequestDispatcher("/pages/user.jsp").forward(request, response);
     }
 }

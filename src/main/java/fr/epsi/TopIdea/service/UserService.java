@@ -19,9 +19,6 @@ public class UserService implements IUserService {
     @EJB
     IUserDao userDao = new UserDao();
 
-    @EJB
-    IRoleDao roleDao = new RoleDao();
-
     @Override
     public User findByName(String name) {
         return this.userDao.findOneByName(name);
@@ -72,10 +69,10 @@ public class UserService implements IUserService {
 //            this.roleDao.create(role);
 //        }
 
-        Role role = this.roleDao.findOneByName("USER");
-        List<Role> roles = new ArrayList<Role>();
-        roles.add(role);
-        user.setRoles(roles);
+//        Role role = this.roleDao.findOneByName("USER");
+//        List<Role> roles = new ArrayList<Role>();
+//        roles.add(role);
+//        user.setRoles(roles);
 
         this.userDao.create(user);
     }

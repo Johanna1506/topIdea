@@ -21,21 +21,23 @@
       </div>
       <div class="utility-info">
           <ul class="utility-list">
-              <li>
-                  <a href="update?id=${user.id}&action=activate">
-                      Activer
-                  </a>
-              </li>
-              <li>
-                <a href="update?id=${user.id}&action=deactivate">
-                    Desactiver
-                </a>
-              </li>
-              <li>
-                  <a href="update?id=${user.id}&action=suppress">
-                      Supprimer
-                  </a>
-              </li>
+              <c:if test="${false==admin}">
+                  <li>
+                      <a href="update?id=${user.id}&action=activate">
+                          Activer
+                      </a>
+                  </li>
+                  <li>
+                      <a href="update?id=${user.id}&action=deactivate">
+                          Desactiver
+                      </a>
+                  </li>
+                  <li>
+                      <a href="update?id=${user.id}&action=suppress">
+                          Supprimer
+                      </a>
+                  </li>
+              </c:if>
           </ul>
       </div>
       <div class="gradient-overlay"></div>

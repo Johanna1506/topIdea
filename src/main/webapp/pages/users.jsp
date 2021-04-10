@@ -23,6 +23,11 @@
                 <div class="thumb" style="background-image: url(${idea.image});"></div>
                 <article>
                     <h1>${user.username}</h1>
+                    <ul>
+                    <c:forEach items="${user.roles}" var="role" varStatus="variableStatus">
+                        <li>${role.name}</li>
+                    </c:forEach>
+                    </ul>
                 </article>
             </a>
         </c:forEach>
