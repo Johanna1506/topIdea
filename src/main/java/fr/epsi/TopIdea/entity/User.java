@@ -14,7 +14,7 @@ public class User {
     private String password;
     private boolean isActive;
 
-    @ManyToMany(mappedBy = "users", cascade = CascadeType.REMOVE)
+    @ManyToMany(mappedBy = "users")
     private Collection<Role> roles;
 
     @OneToMany(mappedBy = "author", cascade = CascadeType.REMOVE)

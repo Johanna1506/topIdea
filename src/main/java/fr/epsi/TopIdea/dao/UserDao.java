@@ -81,4 +81,15 @@ public class UserDao implements IUserDao {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void create(User user) {
+        try {
+            userTransaction.begin();
+            entityManager.persist(user);
+            userTransaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

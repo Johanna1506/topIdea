@@ -12,4 +12,5 @@ public interface IUserDao {
     void deactivate(User user);
     void activate(User user);
     void delete(User user);
+    void create(User user);
 }
