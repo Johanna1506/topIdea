@@ -121,7 +121,7 @@
                     </div>
 
                 </article>
-                <div class="number-${idea.id}">${idea.id}</div>
+                <div class="number-${countBuzz}">${countBuzz}</div>
                 <c:set var="countBuzz" value="${countBuzz + 1}" scope="page"/>
             </c:forEach>
         </div>
