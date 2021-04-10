@@ -27,4 +27,24 @@ public class UserService implements IUserService {
     public List<User> getAll() {
         return this.userDao.getAll();
     }
+
+    @Override
+    public User findOne(Long id) {
+        return this.userDao.findOne(id);
+    }
+
+    @Override
+    public void deactivate(User user) {
+        this.userDao.deactivate(user);
+    }
+
+    @Override
+    public void activate(User user) {
+        this.userDao.activate(user);
+    }
+
+    @Override
+    public void delete(User user) {
+        this.userDao.delete(user);
+    }
 }

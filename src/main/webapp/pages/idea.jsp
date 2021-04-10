@@ -89,7 +89,7 @@
       <div class="gradient-overlay"></div>
       <div class="color-overlay"></div>
     </div>
-    <a href="home" class="home">Retour à l'accueil <span class="licon icon-arr icon-black"></span></a>
+    <a href="/TopIdea-1.0-SNAPSHOT/home" class="home">Retour à l'accueil <span class="licon icon-arr icon-black"></span></a>
     <a href="ideas" class="back">Toutes les idées<span class="licon icon-arr icon-black"></span></a>
 
 </body>

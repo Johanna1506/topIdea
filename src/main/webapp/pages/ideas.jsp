@@ -19,7 +19,7 @@
     </header>
     <div class="band">
         <c:forEach items="${ideas}" var="idea" varStatus="variableStatus">
-            <a href="idea?id=${idea.id}" class="card">
+            <a href="auth/idea?id=${idea.id}" class="card">
                 <div class="thumb" style="background-image: url(${idea.image});"></div>
                 <article>
                     <h1>${idea.title}</h1>
