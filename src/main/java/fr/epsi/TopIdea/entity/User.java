@@ -14,7 +14,7 @@ public class User {
     private String password;
     private boolean isActive;
 
-    @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private Collection<Role> roles;
 
     @OneToMany(mappedBy = "author", cascade = CascadeType.REMOVE)
