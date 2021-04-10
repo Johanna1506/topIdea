@@ -75,7 +75,7 @@ public class UserDao implements IUserDao {
     public void delete(User user) {
         try {
             userTransaction.begin();
-            entityManager.remove(user);
+            entityManager.remove(entityManager.contains(user) ? user : entityManager.merge(user));
             userTransaction.commit();
         } catch (Exception e) {
             e.printStackTrace();

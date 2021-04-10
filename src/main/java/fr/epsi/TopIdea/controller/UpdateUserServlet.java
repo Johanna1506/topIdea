@@ -37,6 +37,10 @@ public class UpdateUserServlet extends HttpServlet {
 
             String action = request.getParameter("action");
             switch (action) {
+                case "activate":
+                    userService.activate(user);
+                    message = "L'utilisateur a été activé.";
+                    break;
                 case "deactivate":
                     userService.deactivate(user);
                     message = "L'utilisateur a été désactivé.";

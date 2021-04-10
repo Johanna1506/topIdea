@@ -22,6 +22,11 @@
       <div class="utility-info">
           <ul class="utility-list">
               <li>
+                  <a href="update?id=${user.id}&action=activate">
+                      Activer
+                  </a>
+              </li>
+              <li>
                 <a href="update?id=${user.id}&action=deactivate">
                     Desactiver
                 </a>
@@ -37,7 +42,7 @@
       <div class="color-overlay"></div>
     </div>
     <a href="/TopIdea-1.0-SNAPSHOT/home" class="home">Retour à l'accueil <span class="licon icon-arr icon-black"></span></a>
-    <a href="dashboard" class="back">Tous les utilisateurs<span class="licon icon-arr icon-black"></span></a>
+    <a href="dashboard" class="back">Dashboard<span class="licon icon-arr icon-black"></span></a>
 
 </body>
 </html>
